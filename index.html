@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>项目导航</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style type="text/css">
+            body {
+                overflow-x: hidden;
+                background: #B0C2E0;
+            }
+            .mainBox {
+                position: relative;
+                left: 50%;
+                margin-left: -400px;
+                width: 800px;
+                font-size: 0;
+                text-align: center;
+            }
+            #arrayLeft,#arrayRight {
+                display: inline-block;
+                width: 50%;
+                font-size: 16px;
+                text-align: left;
+                vertical-align: top;
+            }
+            .headLine {
+                margin: 10px 0;
+                font-size: 20px;
+                color: #fff;
+                font-weight: bold;
+            }
+            #arrayLeft a {
+                text-decoration: underline;
+            }
+            li {
+                padding-left: 10px;
+                height: 30px;
+            }
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #2A3E8A;
+            }
+            .imgBox {
+                position: absolute;
+                top: 100px;
+                left: 600px;
+            }
+            .imgShow {
+                display: none;
+            }
+            .imgShow img {
+                width: 150px;
+            }
+            .note {
+                margin-top: 20px;
+                height: 30px;
+                text-align: right;
+                font-size: 14px;
+                color: #000;
+            }
+        </style>
+        <script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+
+    <body>
+        <div class="mainBox">
+            <div id="arrayLeft">
+                <p class="headLine">PC端页面，点击查看：</p>
+                <ul>
+                    <li v-for="item in list1">
+                        <a :href="item.link" target="_blank">{{ item.name }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="arrayRight">
+                <p class="headLine">移动端页面，扫码查看</p>
+                <ul class="rightSide">
+                    <li v-for="item in list2" class="rightList">
+                        <a :href="item.link" target="_blank">{{ item.name }}</a>
+                    </li>
+                </ul>
+                <ul class="imgBox">
+                    <li v-for="item in list2" class="imgShow">
+                        <img :src='"img/"+($index+1)+".jpg"' />
+                    </li>
+                </ul>
+            </div>
+
+            <div class="note">
+                *页面承载在github上，打开略慢，请耐心等待。
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function() {
+                $(".rightList").hover(function() {
+                    var idx = $(this).index();
+                    $(".imgShow").eq(idx).show().siblings().hide()
+                });
+                $(".rightList a").click(function() {
+                    event.preventDefault();
+                });
+                $(".rightSide").on("mouseleave", function() {
+                    $(".imgShow").hide()
+                });
+            })
+        </script>
+    </body>
+</html>
