@@ -2,7 +2,10 @@ $(function() {
     var list1 = [{
             "link": "https://popdylz.github.io/projectsNav/index.html",
             "name": "项目导航"
-        }, {
+        },  {
+            "link": "https://popdylz.github.io/resume-smart/index.html",
+            "name": "个人简历"
+        },{
             "link": "https://popdylz.github.io/818strategy/index.html",
             "name": "818发烧攻略"
         }, {
@@ -25,7 +28,13 @@ $(function() {
             "name": "2016圣诞节"
         }, {
             "link": "https://popdylz.github.io/xiaoMi/index.html",
-            "name": "小米超级品牌日"
+            "name": "小米超级品牌日预热"
+        }, {
+            "link": "https://popdylz.github.io/xiaoMiBaoFa/index.html",
+            "name": "小米超级品牌日爆发"
+        }, {
+            "link": "https://popdylz.github.io/simpleTemplate-pc/index.html",
+            "name": "pc日销模版"
         }],
         list2 = [{
             "link": "https://popdylz.github.io/double11-2015/index.html",
