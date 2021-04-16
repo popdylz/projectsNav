@@ -1,8 +1,5 @@
 $(function() {
     var list1 = [{
-            "link": "https://popdylz.github.io/projectsNav/index.html",
-            "name": "项目导航"
-        },  {
             "link": "https://popdylz.github.io/resume-smart/index.html",
             "name": "个人简历"
         },{
